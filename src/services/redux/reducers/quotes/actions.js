@@ -5,12 +5,25 @@ const initialState = {
     loading: false,
     quotes: [],
     error: null,
+    successCreatedQuote: false,
+    loadingCreateQuote: false,
+    errorCreatingQuote: false
   }
 
 export const fetchQuotes = createAsyncThunk(
   "quotes/fetchQuotes",
   async () => {
-    const response = await axios.get("http://localhost:8080");
+    console.log('entri aqui')
+    const response = await axios.get("http://localhost:8080/api/get-quotes");
+    console.log(response)
+    return response.data.results;
+  }
+);
+
+export const createQuote = createAsyncThunk(
+  "quotes/createQuote",
+  async () => {
+    const response = await axios.get("http://localhost:8080/api/get-quotes");
     return response.data.results;
   }
 );
@@ -38,6 +51,18 @@ const quotesSlice = createSlice({
         state.quotes = action.payload;
     })
     builder.addCase(fetchQuotes.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+    })
+
+    builder.addCase(createQuote.pending, (state) => {
+      state.loading = true;
+    })
+    builder.addCase(createQuote.fulfilled, (state, action) => {
+        state.loading = false;
+        state.quotes = action.payload;
+    })
+    builder.addCase(createQuote.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
     })
