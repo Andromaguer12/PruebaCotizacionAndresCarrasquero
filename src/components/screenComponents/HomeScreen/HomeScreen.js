@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
 import styles from './styles/homeScreenStyles'
 import Header from '../../generalComponents/Header/Header'
@@ -71,11 +71,11 @@ const HomeScreen = () => {
     
 
     const goToAddQuotes = () => {
-        navigation.navigate('AddQuote')
+        navigation.navigate('CreateQuote')
     }
 
     return (
-        <View style={styles.homeContainer}>
+        <ScrollView contentContainerStyle={styles.homeContainer}>
             <Header />
             <View style={styles.titles}>
                 <Text style={styles.title1}>List of Quotes</Text>
@@ -90,7 +90,7 @@ const HomeScreen = () => {
                     return <QuoteHomeCard key={card._id} item={card} />
                 })}
             </View>
-        </View>
+        </ScrollView>
     )
 }
 

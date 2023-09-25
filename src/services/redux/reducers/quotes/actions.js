@@ -10,7 +10,7 @@ const initialState = {
 export const fetchQuotes = createAsyncThunk(
   "quotes/fetchQuotes",
   async () => {
-    const response = await axios.get("http://localhost:5001");
+    const response = await axios.get("http://localhost:8080");
     return response.data.results;
   }
 );
