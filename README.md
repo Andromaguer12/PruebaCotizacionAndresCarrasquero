@@ -1,5 +1,17 @@
 # PruebaCotizacionAndresCarrasquero
-RESPONDIENDO LAS PREGUNTAS REALIZADAS:
+
+
+# Para levantar el proyecto necesita:
+react native 0.72
+nodejs 18.16.0
+y ejecutar el comando npm run android, luego de instalar las dependencias con npm install
+
+#para ejecutar el backend:
+se puede ejecutar con el comando npm run dev-init
+y luego de instalar las dependencias con npm install
+
+
+RESPONDIENDO LAS PREGUNTAS DADAS:
 
 # ¿Qué medidas tomaría para asegurar la seguridad y la validación de datos en su aplicación?
 normalmente lo que utilizo son funciones validadoras, al momento de enviar datos desde el front, al back, y tambien validar los datos 1 por 1 cuando llegan al backend antes de guardarlos en la base de datos, en caso de dar error, retonar al usuario algun mensaje, ademas utilizar typescript para mejorar la mantenibilidad del codigo
