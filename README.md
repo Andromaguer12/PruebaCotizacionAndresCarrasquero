@@ -6,7 +6,7 @@ react native 0.72
 nodejs 18.16.0
 y ejecutar el comando npm run android, luego de instalar las dependencias con npm install
 
-#para ejecutar el backend:
+# para ejecutar el backend:
 se puede ejecutar con el comando npm run dev-init
 y luego de instalar las dependencias con npm install
 
